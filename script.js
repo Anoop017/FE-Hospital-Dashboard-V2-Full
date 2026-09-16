@@ -46,4 +46,53 @@ document.addEventListener('DOMContentLoaded', () => {
       closeModal();
     }
   });
+
+  // Credential Copy Handler (with visual toast and timeout reset)
+  const copyButtons = document.querySelectorAll('.cred-chip');
+  copyButtons.forEach((button) => {
+    let resetTimer = null;
+
+    button.addEventListener('click', async () => {
+      const textToCopy = button.getAttribute('data-copy');
+      if (!textToCopy) return;
+
+      let copySuccess = false;
+
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(textToCopy);
+          copySuccess = true;
+        } catch (err) {
+          console.warn('Clipboard API failed, using fallback:', err);
+        }
+      }
+
+      if (!copySuccess) {
+        // Fallback for non-HTTPS or unsupported contexts
+        try {
+          const textarea = document.createElement('textarea');
+          textarea.value = textToCopy;
+          textarea.style.position = 'fixed';
+          textarea.style.left = '-9999px';
+          textarea.style.top = '-9999px';
+          document.body.appendChild(textarea);
+          textarea.focus();
+          textarea.select();
+          copySuccess = document.execCommand('copy');
+          document.body.removeChild(textarea);
+        } catch (fallbackErr) {
+          console.error('Copy fallback failed:', fallbackErr);
+        }
+      }
+
+      if (copySuccess) {
+        if (resetTimer) clearTimeout(resetTimer);
+        button.classList.add('is-copied');
+        resetTimer = setTimeout(() => {
+          button.classList.remove('is-copied');
+          resetTimer = null;
+        }, 1600);
+      }
+    });
+  });
 });

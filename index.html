@@ -89,6 +89,61 @@
       </article>
     </div>
 
+    <!-- Compact System Metrics / Grafana Bar -->
+    <div class="monitoring-bar" id="bar-monitoring">
+      <div class="monitoring-left">
+        <div class="monitoring-status-indicator" title="System Online">
+          <span class="status-pulse-dot" aria-hidden="true"></span>
+        </div>
+        <div class="monitoring-info">
+          <div class="monitoring-title-row">
+            <span class="monitoring-title">System Metrics</span>
+            <span class="monitoring-tag">Grafana</span>
+          </div>
+          <span class="monitoring-subtitle">EC2 &amp; microservice telemetry</span>
+        </div>
+      </div>
+
+      <div class="monitoring-right">
+        <div class="credentials-group" aria-label="Grafana Demo Credentials">
+          <button type="button" class="cred-chip" data-copy="admin" title="Click to copy username: admin" aria-label="Copy username admin">
+            <span class="cred-label">User</span>
+            <span class="cred-value">admin</span>
+            <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            <span class="copy-toast" aria-live="polite">Copied!</span>
+          </button>
+
+          <button type="button" class="cred-chip" data-copy="admin123" title="Click to copy password: admin123" aria-label="Copy password admin123">
+            <span class="cred-label">Pass</span>
+            <span class="cred-value">admin123</span>
+            <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            <span class="copy-toast" aria-live="polite">Copied!</span>
+          </button>
+        </div>
+
+        <a 
+          href="https://grafana.anoopsnair.online/login" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="monitoring-launch-btn"
+          id="btn-grafana"
+          aria-label="Launch Grafana Dashboard (opens in new tab)"
+        >
+          <span>Open</span>
+          <svg class="external-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 0 0-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 1 1.5 0v4A2.25 2.25 0 0 1 12.75 17h-8.5A2.25 2.25 0 0 1 2 14.75v-8.5A2.25 2.25 0 0 1 4.25 4h4a.75.75 0 0 1 0 1.5h-4Z" clip-rule="evenodd" />
+            <path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 0 0 1.06 1.06L14.47 6.59v3.66a.75.75 0 0 0 1.5 0V5a1 1 0 0 0-1-1H9.75a.75.75 0 0 0 0 1.5h3.66l-7.216 7.253Z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
     <!-- Footer Actions & Social Links -->
     <footer class="footer-section">
       <button type="button" class="about-btn" id="btn-about" aria-label="About the Hospital Management System">
@@ -189,6 +244,13 @@
             <div class="tech-badge">Real-time & Reports</div>
             <p class="tech-desc"><strong>Go service</strong> handles <strong>WebSocket-based</strong> ICU vitals and PDF report generation.</p>
           </div>
+
+          <div class="tech-card">
+            <div class="tech-badge">Monitoring & Metrics</div>
+            <p class="tech-desc"><strong>Grafana & Prometheus</strong> track live EC2 server health, resource utilization, and container telemetry (<a href="https://grafana.anoopsnair.online/login" target="_blank" rel="noopener noreferrer" class="modal-link">Open Grafana</a> &mdash; <code>admin</code> / <code>admin123</code>).</p>
+          </div>
+
+        </div>
 
         </div>
       </div>

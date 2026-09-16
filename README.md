@@ -12,6 +12,7 @@ This portal acts as the central launchpad to explore the live interactive demos 
 | :--- | :--- | :--- |
 | **Patient / Doctor / Staff Portal** | Access patient information, appointment scheduling, consultation records, and clinical workflows. | [Launch Patient Portal](https://hospital-dashboard-v2.netlify.app/login) |
 | **Admin Portal** | Manage hospital administration, staff rosters, department analytics, bed occupancy, and system configurations. | [Launch Admin Portal](https://admin-hospital-dashboard.netlify.app/login) |
+| **System Metrics (Grafana)** | Real-time EC2 server vitals, microservices resource utilization, and container telemetry.<br>*(User: `admin` \| Pass: `admin123`)* | [Launch Grafana Dashboard](https://grafana.anoopsnair.online/login) |
 
 ---
 
@@ -66,6 +67,10 @@ This portal acts as the central launchpad to explore the live interactive demos 
 ### 6. Real-Time Telemetry & Reporting
 - **WebSocket Streaming**: Powered by the **Go service** for live ICU vitals telemetry and instant state updates.
 - **Automated Report Generation**: Asynchronous clinical PDF report generation.
+
+### 7. Observability & Infrastructure Monitoring
+- **Prometheus & node_exporter**: Collecting hardware utilization, CPU, memory, and container runtime metrics across the EC2 instance.
+- **Grafana Dashboard**: Visualizing infrastructure health and service availability in real-time. Accessible via [Grafana Dashboard](https://grafana.anoopsnair.online/login) (Credentials: `admin` / `admin123`).
 
 ---
 
